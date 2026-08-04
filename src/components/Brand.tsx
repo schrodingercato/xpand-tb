@@ -10,18 +10,43 @@
  */
 
 export function LogoXpandTB({
-  className = 'h-10'
+  varian = 'terang',
+  ringkas = false,
+  className = 'h-12'
 }: {
   varian?: 'terang' | 'gelap'
   ringkas?: boolean
   className?: string
 }) {
+  const gelap = varian === 'gelap'
   return (
-    <img
-      src="/logo.png"
-      alt="Logo Xpand-TB"
-      className={`${className} w-auto object-contain drop-shadow-sm`}
-    />
+    <span className="inline-flex items-center gap-3">
+      <img
+        src="/logo.png"
+        alt="Logo Xpand-TB"
+        className={`${className} w-auto object-contain drop-shadow-sm scale-125 transform origin-left`}
+      />
+      {!ringkas && (
+        <span className="leading-none pt-1">
+          <span
+            className={[
+              'block text-[20px] font-black tracking-tight',
+              gelap ? 'text-white' : 'text-teal-900',
+            ].join(' ')}
+          >
+            XPAND-TB
+          </span>
+          <span
+            className={[
+              'mt-0.5 block text-[10.5px] font-bold tracking-[0.2em] uppercase',
+              gelap ? 'text-white/70' : 'text-teal-600',
+            ].join(' ')}
+          >
+            Klinik
+          </span>
+        </span>
+      )}
+    </span>
   )
 }
 
