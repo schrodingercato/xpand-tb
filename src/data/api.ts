@@ -160,6 +160,17 @@ export class GalatApi extends Error {
 }
 
 async function minta<T>(url: string, init?: RequestInit): Promise<T> {
+  // --- MOCK INTERCEPTOR ---
+  if (url === '/api/status') {
+    return { modelDimuat: false, checkpoint: 'Vercel Demo Mode', antre: 0, fov: 'resize', idleUnloadDetik: 900, cuda: false } as unknown as T
+  }
+  if (url === '/api/kasus' && init?.method !== 'POST') {
+    return [] as unknown as T // Daftar kasus kosong
+  }
+  if (url === '/api/kasus' && init?.method === 'POST') {
+    throw new GalatApi('Fitur unggah dinonaktifkan pada versi Demo (tanpa backend).', 403)
+  }
+  
   let r: Response
   try {
     r = await fetch(url, init)
@@ -248,12 +259,37 @@ const kirimJson = <T,>(url: string, badan: unknown) =>
 export const daftarKlinisi = (pengenal: string, nama: string, sandi: string, subjudul: string) =>
   kirimJson<Pengguna>('/api/auth/daftar', { pengenal, nama, sandi, subjudul })
 
-export const masukAkun = (pengenal: string, sandi: string) =>
-  kirimJson<Pengguna>('/api/auth/masuk', { pengenal, sandi })
+const KUNCI_MOCK = 'xpandtb_mock_session'
 
-export const keluarAkun = () => kirimJson<{ keluar: boolean }>('/api/auth/keluar', {})
+export const masukAkun = async (pengenal: string, sandi: string): Promise<Pengguna> => {
+  // --- MOCK LOGIN ---
+  // Mencegat login agar tidak perlu backend sungguhan.
+  if (pengenal === '197001011990031001' && sandi === 'demo1234') {
+    const sesiKlinisi: Pengguna = {
+      id: 1,
+      peran: 'klinisi',
+      nama: 'Dr. Demo Xpand-TB',
+      pengenal: '197001••••••••1001',
+      subjudul: 'Klinik Utama',
+      inisial: 'DD',
+      aktif: true,
+    }
+    localStorage.setItem(KUNCI_MOCK, JSON.stringify(sesiKlinisi))
+    return sesiKlinisi
+  }
+  throw new GalatApi('NIP atau kata sandi salah. Gunakan NIP: 197001011990031001, Sandi: demo1234', 401)
+}
 
-export const sesiSekarang = () => minta<Pengguna | null>('/api/auth/saya')
+export const keluarAkun = async () => {
+  localStorage.removeItem(KUNCI_MOCK)
+  return { keluar: true }
+}
+
+export const sesiSekarang = async (): Promise<Pengguna | null> => {
+  const tersimpan = localStorage.getItem(KUNCI_MOCK)
+  if (tersimpan) return JSON.parse(tersimpan)
+  return null
+}
 
 export const aktivasiPasien = (kode: string, nik: string, sandi: string, setuju: boolean) =>
   kirimJson<Pengguna>('/api/auth/aktivasi', { kode, nik, sandi, setuju })
