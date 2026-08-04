@@ -27,7 +27,7 @@ export default class BatasGalat extends Component<Props, State> {
   }
 
   componentDidCatch(galat: Error, info: ErrorInfo) {
-    console.error('[VoluTB] komponen gagal dirender:', galat, info.componentStack)
+    console.error('[Xpand-TB] komponen gagal dirender:', galat, info.componentStack)
   }
 
   render() {

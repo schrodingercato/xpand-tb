@@ -2,7 +2,7 @@
 import { useState, type ReactNode } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../auth/AuthContext'
-import { BarisInstitusi, LogoVoluTB } from '../Brand'
+import { BarisInstitusi, LogoXpandTB } from '../Brand'
 import { IcHome, IcList, IcLogout, IcShield, IcUpload } from '../Icons'
 
 const MENU = [
@@ -38,7 +38,7 @@ export default function ClinicianLayout({
   const sidebar = (
     <div className="flex h-full flex-col bg-teal-500 text-white">
       <div className="flex items-center justify-between px-5 pt-6 pb-7">
-        <LogoVoluTB varian="gelap" />
+        <LogoXpandTB varian="gelap" />
         <IcShield className="h-4 w-4 text-white/50" />
       </div>
 

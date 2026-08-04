@@ -8,7 +8,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../auth/AuthContext'
-import { BarisInstitusi, LogoVoluTB } from '../components/Brand'
+import { BarisInstitusi, LogoXpandTB } from '../components/Brand'
 import { IcCheck, IcShield } from '../components/Icons'
 
 const LANGKAH = ['Kode aktivasi', 'Verifikasi NIK', 'Kata sandi & persetujuan'] as const
@@ -63,7 +63,7 @@ export default function Aktivasi() {
     <div className="flex min-h-screen flex-col bg-[#f1f5f6]">
       <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5">
         <Link to="/">
-          <LogoVoluTB />
+          <LogoXpandTB />
         </Link>
         <BarisInstitusi />
       </header>
@@ -175,7 +175,7 @@ export default function Aktivasi() {
                   />
                   <span className="text-[11.5px] leading-relaxed text-teal-700">
                     Saya menyetujui penggunaan data pemeriksaan saya untuk keperluan pelayanan dan
-                    pengembangan sistem VoluTB, sesuai ketentuan Undang-Undang Perlindungan Data
+                    pengembangan sistem Xpand-TB, sesuai ketentuan Undang-Undang Perlindungan Data
                     Pribadi. Persetujuan ini dicatat sebagai <em>informed consent</em>.
                   </span>
                 </label>

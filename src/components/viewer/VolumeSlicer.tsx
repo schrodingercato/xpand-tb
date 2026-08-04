@@ -2,7 +2,7 @@
  * Peraga irisan ortogonal (aksial / koronal / sagital) di atas volume NYATA.
  *
  * Komponen ini membaca volume 128³ sungguhan: pseudo-CT hasil rekonstruksi maupun CT asli sebagai
- * rujukan, lengkap dengan mask segmentasi dari `volutb.segmentation.heuristic`. Asetnya dihasilkan
+ * rujukan, lengkap dengan mask segmentasi dari `Xpand-TB.segmentation.heuristic`. Asetnya dihasilkan
  * `scripts/export_volume_for_web.py`. Pasangannya `LesionViewer3D.tsx` merender permukaan 3D dari
  * mask yang sama (`scripts/export_lung_mesh.py`) — irisan di sini, permukaan di sana.
  *

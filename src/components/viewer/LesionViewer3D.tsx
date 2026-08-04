@@ -4,7 +4,7 @@
  * Versi sebelumnya merender **proksi geometris** — dua bentuk lathe sebagai "paru" dan satu bola
  * per lobus, ukurannya diturunkan dari angka keyakinan contoh di `mock.ts`. Yang dirender di sini
  * adalah permukaan dari **mask segmentasi volume sungguhan** pasien itu (`marching cubes` atas
- * keluaran `volutb.segmentation.heuristic`), diekspor oleh `scripts/export_lung_mesh.py`:
+ * keluaran `Xpand-TB.segmentation.heuristic`), diekspor oleh `scripts/export_lung_mesh.py`:
  * paru transparan sebagai konteks, tiap kavitas sebagai gumpalan padat di posisi anatomisnya.
  *
  * ## Dua seri, dan kenapa keduanya dikirim

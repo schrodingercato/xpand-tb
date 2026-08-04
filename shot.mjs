@@ -40,7 +40,7 @@ async function sesi(peran) {
       ? { peran: 'klinisi', nama: 'Dr. Aisyah R. Nadjib', pengenal: '12345', subjudul: 'Pulmonologi', inisial: 'AN' }
       : { peran: 'pasien', nama: 'Budi Santoso', pengenal: '3201••••••••5678', subjudul: 'Pasien Terdaftar', inisial: 'BS' }
   await Runtime.evaluate({
-    expression: `sessionStorage.setItem('volutb.sesi', ${JSON.stringify(JSON.stringify(nilai))})`,
+    expression: `sessionStorage.setItem('Xpand-TB.sesi', ${JSON.stringify(JSON.stringify(nilai))})`,
   })
 }
 

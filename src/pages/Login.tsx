@@ -2,7 +2,7 @@
 import { useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../auth/AuthContext'
-import { BarisInstitusi, LogoVoluTB } from '../components/Brand'
+import { BarisInstitusi, LogoXpandTB } from '../components/Brand'
 import { IcEye, IcEyeOff, IcLock, IcShield } from '../components/Icons'
 
 const SLIDE = [
@@ -54,7 +54,7 @@ export default function Login() {
     <div className="flex min-h-screen flex-col bg-[#f1f5f6]">
       <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-5">
         <Link to="/">
-          <LogoVoluTB />
+          <LogoXpandTB />
         </Link>
         <BarisInstitusi />
       </header>

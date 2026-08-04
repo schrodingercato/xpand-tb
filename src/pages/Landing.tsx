@@ -1,6 +1,6 @@
 /** Landing Page — Gambar 3.1 proposal. */
 import { Link } from 'react-router-dom'
-import { BarisInstitusi, LogoITS, LogoVoluTB } from '../components/Brand'
+import { BarisInstitusi, LogoITS, LogoXpandTB } from '../components/Brand'
 import {
   IcArrow,
   IcCube,
@@ -55,7 +55,7 @@ export default function Landing() {
     <div className="min-h-screen bg-[#f1f5f6]">
       <header className="sticky top-0 z-30 border-b border-teal-100/70 bg-[#f1f5f6]/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center gap-4 px-5 py-4">
-          <LogoVoluTB />
+          <LogoXpandTB />
           <div className="ml-auto flex items-center gap-5">
             <a
               href="#alur"
@@ -160,7 +160,7 @@ export default function Landing() {
         <section id="alur" className="border-y border-teal-100 bg-white">
           <div className="mx-auto max-w-6xl px-5 py-16">
             <p className="text-[11px] font-bold tracking-[0.16em] text-teal-400 uppercase">
-              Pipeline VoluTB
+              Pipeline Xpand-TB
             </p>
             <h2 className="mt-2 max-w-2xl text-[28px] leading-tight font-extrabold tracking-tight text-teal-900">
               Dari satu proyeksi 2D menjadi konteks spasial yang bisa ditinjau.
@@ -232,7 +232,7 @@ export default function Landing() {
             </h2>
             <ul className="mt-4 grid gap-3 text-[12.5px] leading-relaxed text-amber-900/90 sm:grid-cols-2">
               <li>
-                VoluTB <strong>bukan</strong> pengganti CT scan, radiolog, maupun perangkat CAD
+                Xpand-TB <strong>bukan</strong> pengganti CT scan, radiolog, maupun perangkat CAD
                 skrining, dan tidak menghasilkan diagnosis definitif.
               </li>
               <li>
@@ -255,7 +255,7 @@ export default function Landing() {
       <footer className="border-t border-teal-100 bg-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <LogoVoluTB />
+            <LogoXpandTB />
             <p className="mt-4 max-w-sm text-[12.5px] leading-relaxed text-teal-600">
               Rekonstruksi pseudo-CT dari citra radiografi toraks tunggal berbasis model difusi untuk
               pendeteksian lokasi kavitas 3D dan sintesis proyeksi lateral.

@@ -1,5 +1,5 @@
 /**
- * Elemen identitas: lambang VoluTB dan logo institusi ITS.
+ * Elemen identitas: lambang Xpand-TB dan logo institusi ITS.
  *
  * Logo ITS diambil dari aset resmi (Panduan Identitas Visual ITS,
  * https://www.its.ac.id/tentang/panduan-identitas-visual/):
@@ -9,7 +9,7 @@
  * (clear space) di sekeliling logo lewat padding pembungkusnya.
  */
 
-export function LogoVoluTB({
+export function LogoXpandTB({
   varian = 'terang',
   ringkas = false,
 }: {
@@ -35,7 +35,7 @@ export function LogoVoluTB({
               gelap ? 'text-white' : 'text-teal-800',
             ].join(' ')}
           >
-            VoluTB
+            Xpand-TB
           </span>
           <span
             className={[

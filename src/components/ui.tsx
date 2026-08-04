@@ -102,7 +102,7 @@ export function PeringatanKlinis({ ringkas = false }: { ringkas?: boolean }) {
           </>
         ) : (
           <>
-            Hasil analisis ini disediakan oleh sistem berbantuan komputer (VoluTB) dan{' '}
+            Hasil analisis ini disediakan oleh sistem berbantuan komputer (Xpand-TB) dan{' '}
             <em className="italic">bukan pengganti diagnosis profesional</em>. Rekonstruksi pseudo-CT
             bersifat generatif — estimasi yang koheren dengan proyeksi masukan, bukan pengukuran
             anatomi langsung. Keputusan klinis akhir tetap berada di tangan dokter penanggung jawab.

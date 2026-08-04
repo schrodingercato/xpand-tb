@@ -1,5 +1,5 @@
 /**
- * Klien layanan VoluTB (`api/app.py`) — satu-satunya tempat web menyentuh peladen.
+ * Klien layanan Xpand-TB (`api/app.py`) — satu-satunya tempat web menyentuh peladen.
  *
  * Kasus di sini **berbeda jenis** dari `mock.ts`: yang ini hasil pipeline sungguhan atas CXR
  * yang benar-benar diunggah (pseudo-CT + segmentasi + aset peraga), sementara `mock.ts` adalah
@@ -167,7 +167,7 @@ async function minta<T>(url: string, init?: RequestInit): Promise<T> {
     // Layanan mati adalah kondisi normal di sini (dinyalakan manual, dan model dilepas saat
     // menganggur), jadi ia harus jadi pesan yang bisa ditindaklanjuti — bukan "Failed to fetch".
     throw new GalatApi(
-      'Layanan VoluTB tidak dapat dihubungi. Jalankan: .venv/bin/python -m uvicorn api.app:app --port 8000',
+      'Layanan Xpand-TB tidak dapat dihubungi. Jalankan: .venv/bin/python -m uvicorn api.app:app --port 8000',
       0,
     )
   }

@@ -251,7 +251,7 @@ export default function Workbench() {
         <div className="space-y-4">
           {/*
             Peraga 3D atas permukaan mask SUNGGUHAN pasien ini (marching cubes atas keluaran
-            volutb.segmentation.heuristic), bukan lagi proksi geometris dari angka contoh.
+            Xpand-TB.segmentation.heuristic), bukan lagi proksi geometris dari angka contoh.
             Karena itu ia sekarang bertanda "volume nyata" seperti dua panel di bawahnya.
             Kalau aset meshnya belum diekspor untuk pasien ini, panelnya sengaja TIDAK muncul —
             mengembalikan bentuk karangan hanya supaya ada yang tampil justru merusak seluruh

@@ -1,6 +1,6 @@
 # XpandTB - Frontend Web Interface
 
-Ini adalah repositori khusus untuk frontend (antarmuka web) dari proyek **XpandTB** (sebelumnya VoluTB) - Alat Bantu Keputusan Klinis AI untuk Diagnosis Tuberculosis.
+Ini adalah repositori khusus untuk frontend (antarmuka web) dari proyek **XpandTB** (sebelumnya Xpand-TB) - Alat Bantu Keputusan Klinis AI untuk Diagnosis Tuberculosis.
 
 Repositori ini difork/disalin dari proyek utama backend ML (Tim Deenpeleb, Gemastik XIX 2026).
 

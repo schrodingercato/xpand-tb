@@ -11,7 +11,7 @@ export default defineConfig({
     // maupun saat build produksi disajikan langsung oleh FastAPI (`api/app.py` me-mount web/dist).
     proxy: {
       '/api': {
-        target: process.env.VOLUTB_API ?? 'http://127.0.0.1:8000',
+        target: process.env.Xpand-TB_API ?? 'http://127.0.0.1:8000',
         changeOrigin: true,
       },
     },

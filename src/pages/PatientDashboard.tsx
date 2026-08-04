@@ -8,7 +8,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../auth/AuthContext'
-import { BarisInstitusi, LogoVoluTB } from '../components/Brand'
+import { BarisInstitusi, LogoXpandTB } from '../components/Brand'
 import { Card, CardTitle } from '../components/ui'
 import {
   IcCalendar,
@@ -277,7 +277,7 @@ export default function PatientDashboard() {
       {/* Sidebar terang — kebutuhan pasien jauh lebih sederhana daripada klinisi */}
       <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-teal-100 bg-white px-4 py-6 lg:flex">
         <div className="px-2">
-          <LogoVoluTB />
+          <LogoXpandTB />
         </div>
         <p className="mt-8 px-2 text-[9.5px] font-bold tracking-[0.16em] text-teal-400 uppercase">
           Rekam Medis
@@ -320,7 +320,7 @@ export default function PatientDashboard() {
               <span className="grid h-7 w-7 place-items-center rounded-lg bg-teal-500 text-[12px] font-extrabold text-white">
                 V
               </span>
-              VoluTB Portal
+              Xpand-TB Portal
             </span>
             <span className="ml-auto text-[12.5px] text-teal-600">
               Halo, <strong className="font-bold text-teal-800">{sesi?.nama}</strong>
