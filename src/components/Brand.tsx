@@ -10,15 +10,12 @@
  */
 
 export function LogoXpandTB({
-  varian = 'terang',
-  ringkas = false,
   className = 'h-10'
 }: {
   varian?: 'terang' | 'gelap'
   ringkas?: boolean
   className?: string
 }) {
-  const gelap = varian === 'gelap'
   return (
     <img
       src="/logo.png"
