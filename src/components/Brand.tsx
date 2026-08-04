@@ -21,9 +21,9 @@ export function LogoXpandTB({
   const gelap = varian === 'gelap'
   return (
     <img
-      src="/logo-transparent.png"
+      src="/logo.png"
       alt="Logo Xpand-TB"
-      className={`${className} w-auto object-contain transition-all ${gelap ? 'brightness-0 invert opacity-90' : 'drop-shadow-sm'}`}
+      className={`${className} w-auto object-contain drop-shadow-sm`}
     />
   )
 }
