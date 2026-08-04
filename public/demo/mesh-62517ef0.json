@@ -1,0 +1,150 @@
+{
+  "patientId": "62517ef0",
+  "dims": {
+    "z": 128,
+    "y": 128,
+    "x": 128
+  },
+  "spacingMm": 2.7,
+  "spacingAssumed": true,
+  "series": [
+    {
+      "kind": "pseudo",
+      "nama": "Pseudo-CT (hasil rekonstruksi dari CXR)",
+      "binUrl": "/demo/mesh-62517ef0-pseudo.bin",
+      "lungCm3": 5678.0,
+      "nKavitas": 4,
+      "nDiterima": 4,
+      "meshes": [
+        {
+          "peran": "paru",
+          "posOffset": 0,
+          "nVerts": 13587,
+          "idxBytes": 2,
+          "idxOffset": 81524,
+          "nIndices": 81534
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 244592,
+          "nVerts": 86,
+          "idxBytes": 2,
+          "idxOffset": 245108,
+          "nIndices": 504,
+          "diameterMm": 9.2,
+          "volumeMm3": 413.0,
+          "sisi": "kanan",
+          "zona": "tengah",
+          "centroidZyx": [
+            80.0,
+            43.0,
+            24.0
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 246116,
+          "nVerts": 51,
+          "idxBytes": 2,
+          "idxOffset": 246424,
+          "nIndices": 306,
+          "diameterMm": 7.7,
+          "volumeMm3": 236.0,
+          "sisi": "kiri",
+          "zona": "tengah",
+          "centroidZyx": [
+            80.7,
+            79.8,
+            101.7
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 247036,
+          "nVerts": 158,
+          "idxBytes": 2,
+          "idxOffset": 247984,
+          "nIndices": 924,
+          "diameterMm": 14.1,
+          "volumeMm3": 1457.0,
+          "sisi": "kanan",
+          "zona": "basal",
+          "centroidZyx": [
+            98.4,
+            59.7,
+            17.1
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 249832,
+          "nVerts": 68,
+          "idxBytes": 2,
+          "idxOffset": 250240,
+          "nIndices": 396,
+          "diameterMm": 10.7,
+          "volumeMm3": 650.0,
+          "sisi": "kanan",
+          "zona": "basal",
+          "centroidZyx": [
+            101.6,
+            72.2,
+            18.6
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "ct",
+      "nama": "CT asli (rujukan)",
+      "binUrl": "/demo/mesh-62517ef0-ct.bin",
+      "lungCm3": 4768.0,
+      "nKavitas": 2,
+      "nDiterima": 2,
+      "meshes": [
+        {
+          "peran": "paru",
+          "posOffset": 0,
+          "nVerts": 12778,
+          "idxBytes": 2,
+          "idxOffset": 76668,
+          "nIndices": 76692
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 230052,
+          "nVerts": 36,
+          "idxBytes": 2,
+          "idxOffset": 230268,
+          "nIndices": 204,
+          "diameterMm": 7.0,
+          "volumeMm3": 177.0,
+          "sisi": "kiri",
+          "zona": "tengah",
+          "centroidZyx": [
+            61.1,
+            69.3,
+            78.9
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 230676,
+          "nVerts": 74,
+          "idxBytes": 2,
+          "idxOffset": 231120,
+          "nIndices": 432,
+          "diameterMm": 9.4,
+          "volumeMm3": 433.0,
+          "sisi": "kiri",
+          "zona": "tengah",
+          "centroidZyx": [
+            68.0,
+            68.7,
+            81.6
+          ]
+        }
+      ]
+    }
+  ]
+}

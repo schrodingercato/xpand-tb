@@ -1,0 +1,65 @@
+{
+  "patientId": "d2d09fb1",
+  "dims": {
+    "z": 128,
+    "y": 128,
+    "x": 128
+  },
+  "spacingMm": 2.7,
+  "spacingAssumed": true,
+  "series": [
+    {
+      "kind": "pseudo",
+      "nama": "Pseudo-CT (hasil rekonstruksi dari CXR)",
+      "binUrl": "/demo/mesh-d2d09fb1-pseudo.bin",
+      "lungCm3": 5498.0,
+      "nKavitas": 0,
+      "nDiterima": 0,
+      "meshes": [
+        {
+          "peran": "paru",
+          "posOffset": 0,
+          "nVerts": 13975,
+          "idxBytes": 2,
+          "idxOffset": 83852,
+          "nIndices": 83886
+        }
+      ]
+    },
+    {
+      "kind": "ct",
+      "nama": "CT asli (rujukan)",
+      "binUrl": "/demo/mesh-d2d09fb1-ct.bin",
+      "lungCm3": 5252.0,
+      "nKavitas": 1,
+      "nDiterima": 1,
+      "meshes": [
+        {
+          "peran": "paru",
+          "posOffset": 0,
+          "nVerts": 13684,
+          "idxBytes": 2,
+          "idxOffset": 82104,
+          "nIndices": 82080
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 246264,
+          "nVerts": 30,
+          "idxBytes": 2,
+          "idxOffset": 246444,
+          "nIndices": 168,
+          "diameterMm": 6.7,
+          "volumeMm3": 157.0,
+          "sisi": "kanan",
+          "zona": "tengah",
+          "centroidZyx": [
+            67.6,
+            62.4,
+            15.0
+          ]
+        }
+      ]
+    }
+  ]
+}

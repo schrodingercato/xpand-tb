@@ -1,0 +1,220 @@
+{
+  "patientId": "5e947dc3",
+  "dims": {
+    "z": 128,
+    "y": 128,
+    "x": 128
+  },
+  "tileCols": 16,
+  "spacingMm": [
+    2.7,
+    2.7,
+    2.7
+  ],
+  "spacingAssumed": true,
+  "windowHu": [
+    -1000.0,
+    200.0
+  ],
+  "labels": {
+    "lung": 1,
+    "clcw": 2,
+    "cavity": 3
+  },
+  "series": [
+    {
+      "kind": "pseudo",
+      "nama": "Pseudo-CT (hasil rekonstruksi dari CXR)",
+      "volumeUrl": "/demo/volume-5e947dc3-pseudo.png",
+      "maskUrl": "/demo/mask-5e947dc3-pseudo.png",
+      "lungCm3": 6434.0,
+      "cavities": [
+        {
+          "sisi": "kanan",
+          "zona": "tengah",
+          "diameterMm": 7.7,
+          "z": 53.8,
+          "y": 59.0,
+          "x": 17.0
+        },
+        {
+          "sisi": "kanan",
+          "zona": "tengah",
+          "diameterMm": 7.0,
+          "z": 60.6,
+          "y": 87.2,
+          "x": 49.6
+        },
+        {
+          "sisi": "kanan",
+          "zona": "basal",
+          "diameterMm": 7.9,
+          "z": 84.1,
+          "y": 77.4,
+          "x": 19.1
+        }
+      ]
+    },
+    {
+      "kind": "ct",
+      "nama": "CT asli (rujukan)",
+      "volumeUrl": "/demo/volume-5e947dc3-ct.png",
+      "maskUrl": "/demo/mask-5e947dc3-ct.png",
+      "lungCm3": 7287.0,
+      "cavities": [
+        {
+          "sisi": "kanan",
+          "zona": "apeks",
+          "diameterMm": 9.1,
+          "z": 10.1,
+          "y": 58.6,
+          "x": 62.0
+        },
+        {
+          "sisi": "kiri",
+          "zona": "apeks",
+          "diameterMm": 7.0,
+          "z": 16.7,
+          "y": 57.1,
+          "x": 64.9
+        },
+        {
+          "sisi": "kanan",
+          "zona": "apeks",
+          "diameterMm": 20.7,
+          "z": 28.6,
+          "y": 61.6,
+          "x": 63.2
+        },
+        {
+          "sisi": "kiri",
+          "zona": "tengah",
+          "diameterMm": 10.0,
+          "z": 51.5,
+          "y": 61.0,
+          "x": 84.2
+        },
+        {
+          "sisi": "kiri",
+          "zona": "tengah",
+          "diameterMm": 6.7,
+          "z": 50.8,
+          "y": 69.8,
+          "x": 112.0
+        },
+        {
+          "sisi": "kanan",
+          "zona": "tengah",
+          "diameterMm": 7.2,
+          "z": 52.4,
+          "y": 62.1,
+          "x": 16.0
+        },
+        {
+          "sisi": "kiri",
+          "zona": "tengah",
+          "diameterMm": 7.0,
+          "z": 55.0,
+          "y": 83.0,
+          "x": 73.0
+        },
+        {
+          "sisi": "kiri",
+          "zona": "tengah",
+          "diameterMm": 8.1,
+          "z": 54.6,
+          "y": 93.0,
+          "x": 92.8
+        },
+        {
+          "sisi": "kiri",
+          "zona": "tengah",
+          "diameterMm": 9.5,
+          "z": 58.0,
+          "y": 64.4,
+          "x": 80.5
+        },
+        {
+          "sisi": "kanan",
+          "zona": "tengah",
+          "diameterMm": 8.3,
+          "z": 58.1,
+          "y": 62.4,
+          "x": 51.9
+        },
+        {
+          "sisi": "kiri",
+          "zona": "tengah",
+          "diameterMm": 8.4,
+          "z": 67.4,
+          "y": 65.8,
+          "x": 83.9
+        },
+        {
+          "sisi": "kanan",
+          "zona": "tengah",
+          "diameterMm": 8.1,
+          "z": 67.6,
+          "y": 62.9,
+          "x": 47.1
+        },
+        {
+          "sisi": "kanan",
+          "zona": "tengah",
+          "diameterMm": 8.3,
+          "z": 67.9,
+          "y": 57.9,
+          "x": 14.0
+        },
+        {
+          "sisi": "kiri",
+          "zona": "tengah",
+          "diameterMm": 8.9,
+          "z": 75.0,
+          "y": 62.2,
+          "x": 113.0
+        },
+        {
+          "sisi": "kiri",
+          "zona": "tengah",
+          "diameterMm": 6.7,
+          "z": 75.5,
+          "y": 87.0,
+          "x": 78.0
+        },
+        {
+          "sisi": "kiri",
+          "zona": "tengah",
+          "diameterMm": 6.7,
+          "z": 78.5,
+          "y": 30.0,
+          "x": 98.0
+        },
+        {
+          "sisi": "kiri",
+          "zona": "tengah",
+          "diameterMm": 7.2,
+          "z": 77.3,
+          "y": 69.6,
+          "x": 112.0
+        },
+        {
+          "sisi": "kiri",
+          "zona": "basal",
+          "diameterMm": 7.5,
+          "z": 90.4,
+          "y": 67.9,
+          "x": 112.0
+        },
+        {
+          "sisi": "kanan",
+          "zona": "basal",
+          "diameterMm": 7.0,
+          "z": 100.3,
+          "y": 67.9,
+          "x": 13.0
+        }
+      ]
+    }
+  ]
+}

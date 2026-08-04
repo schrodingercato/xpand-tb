@@ -1,0 +1,99 @@
+{
+  "patientId": "f8c9188b",
+  "dims": {
+    "z": 128,
+    "y": 128,
+    "x": 128
+  },
+  "spacingMm": 2.7,
+  "spacingAssumed": true,
+  "series": [
+    {
+      "kind": "pseudo",
+      "nama": "Pseudo-CT (hasil rekonstruksi dari CXR)",
+      "binUrl": "/demo/mesh-f8c9188b-pseudo.bin",
+      "lungCm3": 1812.0,
+      "nKavitas": 2,
+      "nDiterima": 2,
+      "meshes": [
+        {
+          "peran": "paru",
+          "posOffset": 0,
+          "nVerts": 6438,
+          "idxBytes": 2,
+          "idxOffset": 38628,
+          "nIndices": 38628
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 115884,
+          "nVerts": 42,
+          "idxBytes": 2,
+          "idxOffset": 116136,
+          "nIndices": 240,
+          "diameterMm": 7.2,
+          "volumeMm3": 197.0,
+          "sisi": "kiri",
+          "zona": "tengah",
+          "centroidZyx": [
+            72.3,
+            80.1,
+            99.0
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 116616,
+          "nVerts": 90,
+          "idxBytes": 2,
+          "idxOffset": 117156,
+          "nIndices": 528,
+          "diameterMm": 9.4,
+          "volumeMm3": 433.0,
+          "sisi": "kiri",
+          "zona": "tengah",
+          "centroidZyx": [
+            77.8,
+            88.0,
+            91.8
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "ct",
+      "nama": "CT asli (rujukan)",
+      "binUrl": "/demo/mesh-f8c9188b-ct.bin",
+      "lungCm3": 6254.0,
+      "nKavitas": 1,
+      "nDiterima": 1,
+      "meshes": [
+        {
+          "peran": "paru",
+          "posOffset": 0,
+          "nVerts": 14706,
+          "idxBytes": 2,
+          "idxOffset": 88236,
+          "nIndices": 88176
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 264588,
+          "nVerts": 38,
+          "idxBytes": 2,
+          "idxOffset": 264816,
+          "nIndices": 216,
+          "diameterMm": 7.2,
+          "volumeMm3": 197.0,
+          "sisi": "kiri",
+          "zona": "apeks",
+          "centroidZyx": [
+            32.0,
+            49.0,
+            60.0
+          ]
+        }
+      ]
+    }
+  ]
+}

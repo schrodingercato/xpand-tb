@@ -1,0 +1,99 @@
+{
+  "patientId": "7a659467",
+  "dims": {
+    "z": 128,
+    "y": 128,
+    "x": 128
+  },
+  "spacingMm": 2.7,
+  "spacingAssumed": true,
+  "series": [
+    {
+      "kind": "pseudo",
+      "nama": "Pseudo-CT (hasil rekonstruksi dari CXR)",
+      "binUrl": "/demo/mesh-7a659467-pseudo.bin",
+      "lungCm3": 3992.0,
+      "nKavitas": 3,
+      "nDiterima": 3,
+      "meshes": [
+        {
+          "peran": "paru",
+          "posOffset": 0,
+          "nVerts": 11841,
+          "idxBytes": 2,
+          "idxOffset": 71048,
+          "nIndices": 71022
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 213092,
+          "nVerts": 66,
+          "idxBytes": 2,
+          "idxOffset": 213488,
+          "nIndices": 384,
+          "diameterMm": 8.6,
+          "volumeMm3": 335.0,
+          "sisi": "kiri",
+          "zona": "basal",
+          "centroidZyx": [
+            86.1,
+            88.0,
+            91.6
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 214256,
+          "nVerts": 40,
+          "idxBytes": 2,
+          "idxOffset": 214496,
+          "nIndices": 228,
+          "diameterMm": 7.2,
+          "volumeMm3": 197.0,
+          "sisi": "kanan",
+          "zona": "basal",
+          "centroidZyx": [
+            90.2,
+            55.3,
+            18.1
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 214952,
+          "nVerts": 62,
+          "idxBytes": 2,
+          "idxOffset": 215324,
+          "nIndices": 372,
+          "diameterMm": 8.4,
+          "volumeMm3": 315.0,
+          "sisi": "kiri",
+          "zona": "basal",
+          "centroidZyx": [
+            94.1,
+            67.1,
+            105.0
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "ct",
+      "nama": "CT asli (rujukan)",
+      "binUrl": "/demo/mesh-7a659467-ct.bin",
+      "lungCm3": 2578.0,
+      "nKavitas": 0,
+      "nDiterima": 0,
+      "meshes": [
+        {
+          "peran": "paru",
+          "posOffset": 0,
+          "nVerts": 9006,
+          "idxBytes": 2,
+          "idxOffset": 54036,
+          "nIndices": 53988
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "patientId": "2a3764c0",
+  "dims": {
+    "z": 128,
+    "y": 128,
+    "x": 128
+  },
+  "tileCols": 16,
+  "spacingMm": [
+    2.7,
+    2.7,
+    2.7
+  ],
+  "spacingAssumed": true,
+  "windowHu": [
+    -1000.0,
+    200.0
+  ],
+  "labels": {
+    "lung": 1,
+    "clcw": 2,
+    "cavity": 3
+  },
+  "series": [
+    {
+      "kind": "pseudo",
+      "nama": "Pseudo-CT (hasil rekonstruksi dari CXR)",
+      "volumeUrl": "/demo/volume-2a3764c0-pseudo.png",
+      "maskUrl": "/demo/mask-2a3764c0-pseudo.png",
+      "lungCm3": 7063.0,
+      "cavities": [
+        {
+          "sisi": "kanan",
+          "zona": "apeks",
+          "diameterMm": 6.7,
+          "z": 38.5,
+          "y": 60.5,
+          "x": 21.0
+        },
+        {
+          "sisi": "kiri",
+          "zona": "basal",
+          "diameterMm": 7.0,
+          "z": 95.1,
+          "y": 82.2,
+          "x": 102.4
+        },
+        {
+          "sisi": "kanan",
+          "zona": "basal",
+          "diameterMm": 14.4,
+          "z": 100.2,
+          "y": 59.0,
+          "x": 14.6
+        }
+      ]
+    },
+    {
+      "kind": "ct",
+      "nama": "CT asli (rujukan)",
+      "volumeUrl": "/demo/volume-2a3764c0-ct.png",
+      "maskUrl": "/demo/mask-2a3764c0-ct.png",
+      "lungCm3": 6959.0,
+      "cavities": [
+        {
+          "sisi": "kanan",
+          "zona": "tengah",
+          "diameterMm": 8.1,
+          "z": 43.8,
+          "y": 60.4,
+          "x": 50.4
+        },
+        {
+          "sisi": "kanan",
+          "zona": "tengah",
+          "diameterMm": 8.4,
+          "z": 64.1,
+          "y": 63.4,
+          "x": 51.6
+        },
+        {
+          "sisi": "kanan",
+          "zona": "tengah",
+          "diameterMm": 7.5,
+          "z": 79.3,
+          "y": 62.9,
+          "x": 17.0
+        },
+        {
+          "sisi": "kanan",
+          "zona": "basal",
+          "diameterMm": 7.7,
+          "z": 92.5,
+          "y": 27.0,
+          "x": 60.0
+        }
+      ]
+    }
+  ]
+}

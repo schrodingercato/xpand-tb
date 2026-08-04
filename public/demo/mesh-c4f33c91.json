@@ -1,0 +1,184 @@
+{
+  "patientId": "c4f33c91",
+  "dims": {
+    "z": 128,
+    "y": 128,
+    "x": 128
+  },
+  "spacingMm": 2.7,
+  "spacingAssumed": true,
+  "series": [
+    {
+      "kind": "pseudo",
+      "nama": "Pseudo-CT (hasil rekonstruksi dari CXR)",
+      "binUrl": "/demo/mesh-c4f33c91-pseudo.bin",
+      "lungCm3": 5697.0,
+      "nKavitas": 5,
+      "nDiterima": 5,
+      "meshes": [
+        {
+          "peran": "paru",
+          "posOffset": 0,
+          "nVerts": 14072,
+          "idxBytes": 2,
+          "idxOffset": 84432,
+          "nIndices": 84432
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 253296,
+          "nVerts": 46,
+          "idxBytes": 2,
+          "idxOffset": 253572,
+          "nIndices": 264,
+          "diameterMm": 7.9,
+          "volumeMm3": 256.0,
+          "sisi": "kanan",
+          "zona": "tengah",
+          "centroidZyx": [
+            75.5,
+            50.2,
+            17.0
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 254100,
+          "nVerts": 72,
+          "idxBytes": 2,
+          "idxOffset": 254532,
+          "nIndices": 420,
+          "diameterMm": 9.1,
+          "volumeMm3": 394.0,
+          "sisi": "kanan",
+          "zona": "basal",
+          "centroidZyx": [
+            86.4,
+            68.2,
+            15.0
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 255372,
+          "nVerts": 55,
+          "idxBytes": 2,
+          "idxOffset": 255704,
+          "nIndices": 330,
+          "diameterMm": 8.1,
+          "volumeMm3": 276.0,
+          "sisi": "kanan",
+          "zona": "basal",
+          "centroidZyx": [
+            95.9,
+            75.2,
+            18.6
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 256364,
+          "nVerts": 38,
+          "idxBytes": 2,
+          "idxOffset": 256592,
+          "nIndices": 216,
+          "diameterMm": 7.2,
+          "volumeMm3": 197.0,
+          "sisi": "kiri",
+          "zona": "basal",
+          "centroidZyx": [
+            103.1,
+            52.2,
+            109.0
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 257024,
+          "nVerts": 34,
+          "idxBytes": 2,
+          "idxOffset": 257228,
+          "nIndices": 192,
+          "diameterMm": 6.7,
+          "volumeMm3": 157.0,
+          "sisi": "kiri",
+          "zona": "basal",
+          "centroidZyx": [
+            102.2,
+            67.6,
+            109.0
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "ct",
+      "nama": "CT asli (rujukan)",
+      "binUrl": "/demo/mesh-c4f33c91-ct.bin",
+      "lungCm3": 4173.0,
+      "nKavitas": 3,
+      "nDiterima": 3,
+      "meshes": [
+        {
+          "peran": "paru",
+          "posOffset": 0,
+          "nVerts": 11141,
+          "idxBytes": 2,
+          "idxOffset": 66848,
+          "nIndices": 66834
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 200516,
+          "nVerts": 57,
+          "idxBytes": 2,
+          "idxOffset": 200860,
+          "nIndices": 342,
+          "diameterMm": 8.1,
+          "volumeMm3": 276.0,
+          "sisi": "kanan",
+          "zona": "tengah",
+          "centroidZyx": [
+            53.8,
+            85.4,
+            48.9
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 201544,
+          "nVerts": 34,
+          "idxBytes": 2,
+          "idxOffset": 201748,
+          "nIndices": 192,
+          "diameterMm": 6.7,
+          "volumeMm3": 157.0,
+          "sisi": "kiri",
+          "zona": "tengah",
+          "centroidZyx": [
+            54.2,
+            67.8,
+            75.9
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 202132,
+          "nVerts": 30,
+          "idxBytes": 2,
+          "idxOffset": 202312,
+          "nIndices": 168,
+          "diameterMm": 6.7,
+          "volumeMm3": 157.0,
+          "sisi": "kanan",
+          "zona": "tengah",
+          "centroidZyx": [
+            64.8,
+            63.4,
+            49.8
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "patientId": "a47b748b",
+  "dims": {
+    "z": 128,
+    "y": 128,
+    "x": 128
+  },
+  "spacingMm": 2.7,
+  "spacingAssumed": true,
+  "series": [
+    {
+      "kind": "pseudo",
+      "nama": "Pseudo-CT (hasil rekonstruksi dari CXR)",
+      "binUrl": "/demo/mesh-a47b748b-pseudo.bin",
+      "lungCm3": 6421.0,
+      "nKavitas": 3,
+      "nDiterima": 3,
+      "meshes": [
+        {
+          "peran": "paru",
+          "posOffset": 0,
+          "nVerts": 14166,
+          "idxBytes": 2,
+          "idxOffset": 84996,
+          "nIndices": 84924
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 254844,
+          "nVerts": 36,
+          "idxBytes": 2,
+          "idxOffset": 255060,
+          "nIndices": 204,
+          "diameterMm": 7.0,
+          "volumeMm3": 177.0,
+          "sisi": "kanan",
+          "zona": "tengah",
+          "centroidZyx": [
+            52.4,
+            63.4,
+            16.1
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 255468,
+          "nVerts": 44,
+          "idxBytes": 2,
+          "idxOffset": 255732,
+          "nIndices": 252,
+          "diameterMm": 7.7,
+          "volumeMm3": 236.0,
+          "sisi": "kanan",
+          "zona": "tengah",
+          "centroidZyx": [
+            75.2,
+            51.9,
+            16.0
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 256236,
+          "nVerts": 42,
+          "idxBytes": 2,
+          "idxOffset": 256488,
+          "nIndices": 240,
+          "diameterMm": 7.7,
+          "volumeMm3": 236.0,
+          "sisi": "kanan",
+          "zona": "basal",
+          "centroidZyx": [
+            86.3,
+            71.6,
+            15.0
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "ct",
+      "nama": "CT asli (rujukan)",
+      "binUrl": "/demo/mesh-a47b748b-ct.bin",
+      "lungCm3": 5771.0,
+      "nKavitas": 2,
+      "nDiterima": 2,
+      "meshes": [
+        {
+          "peran": "paru",
+          "posOffset": 0,
+          "nVerts": 14098,
+          "idxBytes": 2,
+          "idxOffset": 84588,
+          "nIndices": 84576
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 253740,
+          "nVerts": 98,
+          "idxBytes": 2,
+          "idxOffset": 254328,
+          "nIndices": 576,
+          "diameterMm": 10.3,
+          "volumeMm3": 571.0,
+          "sisi": "kiri",
+          "zona": "tengah",
+          "centroidZyx": [
+            49.6,
+            64.9,
+            81.5
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 255480,
+          "nVerts": 44,
+          "idxBytes": 2,
+          "idxOffset": 255744,
+          "nIndices": 252,
+          "diameterMm": 7.5,
+          "volumeMm3": 217.0,
+          "sisi": "kanan",
+          "zona": "basal",
+          "centroidZyx": [
+            108.6,
+            53.3,
+            16.1
+          ]
+        }
+      ]
+    }
+  ]
+}

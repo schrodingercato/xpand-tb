@@ -1,0 +1,18 @@
+[
+  {
+    "patientId": "5e947dc3",
+    "metaUrl": "/demo/mesh-5e947dc3.json",
+    "series": [
+      {
+        "kind": "pseudo",
+        "lungCm3": 6434.0,
+        "nKavitas": 3
+      },
+      {
+        "kind": "ct",
+        "lungCm3": 7287.0,
+        "nKavitas": 19
+      }
+    ]
+  }
+]

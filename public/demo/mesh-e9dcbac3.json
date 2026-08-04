@@ -1,0 +1,337 @@
+{
+  "patientId": "e9dcbac3",
+  "dims": {
+    "z": 128,
+    "y": 128,
+    "x": 128
+  },
+  "spacingMm": 2.7,
+  "spacingAssumed": true,
+  "series": [
+    {
+      "kind": "pseudo",
+      "nama": "Pseudo-CT (hasil rekonstruksi dari CXR)",
+      "binUrl": "/demo/mesh-e9dcbac3-pseudo.bin",
+      "lungCm3": 6120.0,
+      "nKavitas": 3,
+      "nDiterima": 3,
+      "meshes": [
+        {
+          "peran": "paru",
+          "posOffset": 0,
+          "nVerts": 14683,
+          "idxBytes": 2,
+          "idxOffset": 88100,
+          "nIndices": 88110
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 264320,
+          "nVerts": 32,
+          "idxBytes": 2,
+          "idxOffset": 264512,
+          "nIndices": 180,
+          "diameterMm": 7.0,
+          "volumeMm3": 177.0,
+          "sisi": "kiri",
+          "zona": "apeks",
+          "centroidZyx": [
+            37.4,
+            87.0,
+            79.3
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 264872,
+          "nVerts": 40,
+          "idxBytes": 2,
+          "idxOffset": 265112,
+          "nIndices": 228,
+          "diameterMm": 7.5,
+          "volumeMm3": 217.0,
+          "sisi": "kanan",
+          "zona": "tengah",
+          "centroidZyx": [
+            75.4,
+            50.5,
+            17.0
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 265568,
+          "nVerts": 48,
+          "idxBytes": 2,
+          "idxOffset": 265856,
+          "nIndices": 276,
+          "diameterMm": 8.3,
+          "volumeMm3": 295.0,
+          "sisi": "kanan",
+          "zona": "basal",
+          "centroidZyx": [
+            95.9,
+            57.7,
+            15.0
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "ct",
+      "nama": "CT asli (rujukan)",
+      "binUrl": "/demo/mesh-e9dcbac3-ct.bin",
+      "lungCm3": 6957.0,
+      "nKavitas": 14,
+      "nDiterima": 14,
+      "meshes": [
+        {
+          "peran": "paru",
+          "posOffset": 0,
+          "nVerts": 15376,
+          "idxBytes": 2,
+          "idxOffset": 92256,
+          "nIndices": 92304
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 276864,
+          "nVerts": 48,
+          "idxBytes": 2,
+          "idxOffset": 277152,
+          "nIndices": 276,
+          "diameterMm": 8.3,
+          "volumeMm3": 295.0,
+          "sisi": "kanan",
+          "zona": "apeks",
+          "centroidZyx": [
+            39.9,
+            82.5,
+            48.2
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 277704,
+          "nVerts": 42,
+          "idxBytes": 2,
+          "idxOffset": 277956,
+          "nIndices": 240,
+          "diameterMm": 7.2,
+          "volumeMm3": 197.0,
+          "sisi": "kanan",
+          "zona": "tengah",
+          "centroidZyx": [
+            49.8,
+            81.0,
+            51.6
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 278436,
+          "nVerts": 52,
+          "idxBytes": 2,
+          "idxOffset": 278748,
+          "nIndices": 300,
+          "diameterMm": 7.9,
+          "volumeMm3": 256.0,
+          "sisi": "kanan",
+          "zona": "tengah",
+          "centroidZyx": [
+            50.8,
+            112.0,
+            39.1
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 279348,
+          "nVerts": 46,
+          "idxBytes": 2,
+          "idxOffset": 279624,
+          "nIndices": 264,
+          "diameterMm": 7.9,
+          "volumeMm3": 256.0,
+          "sisi": "kiri",
+          "zona": "tengah",
+          "centroidZyx": [
+            54.5,
+            83.1,
+            109.0
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 280152,
+          "nVerts": 95,
+          "idxBytes": 2,
+          "idxOffset": 280724,
+          "nIndices": 570,
+          "diameterMm": 10.0,
+          "volumeMm3": 531.0,
+          "sisi": "kanan",
+          "zona": "tengah",
+          "centroidZyx": [
+            61.6,
+            82.1,
+            48.4
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 281864,
+          "nVerts": 34,
+          "idxBytes": 2,
+          "idxOffset": 282068,
+          "nIndices": 192,
+          "diameterMm": 6.7,
+          "volumeMm3": 157.0,
+          "sisi": "kiri",
+          "zona": "tengah",
+          "centroidZyx": [
+            68.5,
+            52.0,
+            99.0
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 282452,
+          "nVerts": 34,
+          "idxBytes": 2,
+          "idxOffset": 282656,
+          "nIndices": 192,
+          "diameterMm": 6.7,
+          "volumeMm3": 157.0,
+          "sisi": "kiri",
+          "zona": "tengah",
+          "centroidZyx": [
+            68.5,
+            53.0,
+            100.0
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 283040,
+          "nVerts": 138,
+          "idxBytes": 2,
+          "idxOffset": 283868,
+          "nIndices": 816,
+          "diameterMm": 13.1,
+          "volumeMm3": 1181.0,
+          "sisi": "kanan",
+          "zona": "tengah",
+          "centroidZyx": [
+            79.2,
+            46.0,
+            51.9
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 285500,
+          "nVerts": 44,
+          "idxBytes": 2,
+          "idxOffset": 285764,
+          "nIndices": 252,
+          "diameterMm": 7.7,
+          "volumeMm3": 236.0,
+          "sisi": "kanan",
+          "zona": "tengah",
+          "centroidZyx": [
+            74.8,
+            80.8,
+            15.0
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 286268,
+          "nVerts": 34,
+          "idxBytes": 2,
+          "idxOffset": 286472,
+          "nIndices": 192,
+          "diameterMm": 6.7,
+          "volumeMm3": 157.0,
+          "sisi": "kiri",
+          "zona": "tengah",
+          "centroidZyx": [
+            76.5,
+            48.0,
+            94.0
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 286856,
+          "nVerts": 38,
+          "idxBytes": 2,
+          "idxOffset": 287084,
+          "nIndices": 216,
+          "diameterMm": 7.0,
+          "volumeMm3": 177.0,
+          "sisi": "kiri",
+          "zona": "basal",
+          "centroidZyx": [
+            85.0,
+            84.0,
+            66.0
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 287516,
+          "nVerts": 92,
+          "idxBytes": 2,
+          "idxOffset": 288068,
+          "nIndices": 540,
+          "diameterMm": 9.9,
+          "volumeMm3": 512.0,
+          "sisi": "kiri",
+          "zona": "basal",
+          "centroidZyx": [
+            97.6,
+            80.8,
+            108.0
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 289148,
+          "nVerts": 38,
+          "idxBytes": 2,
+          "idxOffset": 289376,
+          "nIndices": 216,
+          "diameterMm": 7.0,
+          "volumeMm3": 177.0,
+          "sisi": "kiri",
+          "zona": "basal",
+          "centroidZyx": [
+            113.4,
+            64.0,
+            82.9
+          ]
+        },
+        {
+          "peran": "kavitas",
+          "posOffset": 289808,
+          "nVerts": 34,
+          "idxBytes": 2,
+          "idxOffset": 290012,
+          "nIndices": 192,
+          "diameterMm": 6.7,
+          "volumeMm3": 157.0,
+          "sisi": "kiri",
+          "zona": "basal",
+          "centroidZyx": [
+            119.9,
+            65.0,
+            82.6
+          ]
+        }
+      ]
+    }
+  ]
+}
