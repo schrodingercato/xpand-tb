@@ -22,15 +22,15 @@ export function LogoXpandTB({
   return (
     <span className="inline-flex items-center gap-3">
       <img
-        src="/logo.png"
+        src="/logo xpand.png"
         alt="Logo Xpand-TB"
         className={`${className} w-auto object-contain drop-shadow-sm scale-125 transform origin-left`}
       />
       {!ringkas && (
-        <span className="leading-none pt-1">
+        <span className="leading-none pt-1 flex flex-col justify-center">
           <span
             className={[
-              'block text-[20px] font-black tracking-tight',
+              'block text-[22px] font-black tracking-tight',
               gelap ? 'text-white' : 'text-teal-900',
             ].join(' ')}
           >
@@ -38,11 +38,19 @@ export function LogoXpandTB({
           </span>
           <span
             className={[
-              'mt-0.5 block text-[10.5px] font-bold tracking-[0.2em] uppercase',
-              gelap ? 'text-white/70' : 'text-teal-600',
+              'mt-0.5 block text-[10px] font-extrabold tracking-wide uppercase',
+              gelap ? 'text-white/80' : 'text-teal-700/80',
             ].join(' ')}
           >
-            Klinik
+            AI CLINICAL DECISION SUPPORT
+          </span>
+          <span
+            className={[
+              'mt-0.5 block text-[9px] font-semibold tracking-wide uppercase',
+              gelap ? 'text-white/60' : 'text-teal-600/70',
+            ].join(' ')}
+          >
+            2D TO 3D FOR TB DIAGNOSIS
           </span>
         </span>
       )}
