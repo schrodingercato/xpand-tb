@@ -60,4 +60,18 @@ Jika Admin sudah menyalakan mesin AI lokal, Juri bisa langsung menguji AI sunggu
 • Sandi: ```demo1234```
 5. Udah bisa langsung coba upload foto rontgen (CXR) dan melihat AI berproses secara *real-time*! 🎉
 
-_Note: Jika ingin melihat-lihat tampilan UI secara cepat tanpa butuh server AI (Mode Mock), Anda bisa kapan saja mengunjungi **https://xpand-tb.vercel.app** dan mengosongkan ikon geriginya._
+_Note: Jika ingin melihat-lihat tampilan UI secara cepat tanpa butuh server AI (Mode Mock UI), Anda bisa kapan saja mengunjungi **https://xpand-tb.vercel.app** dan mengosongkan ikon geriginya._
+
+---
+
+### ⚠️ Disclaimer: Status "Mode Demo Cepat" (Bypass)
+
+Secara bawaan (*default*), repositori backend ini telah disetel untuk berjalan dalam **Mode Demo Cepat (Bypass Dummy)**. 
+Saat Anda mengunggah gambar rontgen, sistem secara nyata melakukan pengiriman data *end-to-end* (menyimpan ke database, antrean *worker* di *background*, dll.), **namun proses inferensi PyTorch (pembacaan *AI*)*-nya sengaja di-bypass dan digantikan dengan sampel data 3D yang sudah kami proses sebelumnya.
+
+**Mengapa demikian?**
+1. **Ukuran Model Raksasa:** Model *DVG-Diffusion* yang asli berukuran belasan gigabyte. Mewajibkan juri/tester untuk men-*download*-nya di jaringan publik yang tidak stabil sangatlah berisiko.
+2. **Limitasi Jaringan (Blokir):** Situs penyimpanan model utama (*HuggingFace*) kerap diblokir oleh beberapa penyedia layanan internet (ISP) publik di Indonesia.
+3. **Keterbatasan GPU:** Tidak semua laptop/komputer memiliki GPU (Nvidia RTX 8GB+) yang memadai untuk merender gambar 3D beresolusi tinggi dalam hitungan detik.
+
+Mode Bypass ini memastikan Juri tetap dapat melihat **kestabilan arsitektur aplikasi (UI, Server, WebGL 3D Viewer)** secara utuh, tanpa terhalang oleh kendala instalasi model *machine learning* di lapangan.
