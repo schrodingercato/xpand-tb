@@ -256,7 +256,7 @@ const kirimJson = <T,>(url: string, badan: unknown) =>
     body: JSON.stringify(badan),
   })
 
-export const daftarKlinisi = async (pengenal: string, nama: string, sandi: string, subjudul: string): Promise<Pengguna> => {
+export const daftarKlinisi = async (pengenal: string, nama: string, _sandi: string, subjudul: string): Promise<Pengguna> => {
   // --- MOCK DAFTAR ---
   const inisial = nama.substring(0, 2).toUpperCase()
   const baru: Pengguna = {
