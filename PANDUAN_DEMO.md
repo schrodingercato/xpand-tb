@@ -23,7 +23,7 @@ Lalu cari folder `Gemastik2026` yang baru terdownload tersebut.
 1. *Hanya untuk pertama kali:* Buat virtual environment dengan mengetik:
 ```python -m venv .venv```
 2. Nyalakan virtual environment tersebut dengan mengetik:
-• Windows: ```.\.venv\Scripts\activate```
+• Windows: ```.\.venv\Scripts\activate``` (Atau ```.\.venv\bin\activate``` jika folder Scripts tidak ditemukan).
 • Mac/Linux: ```source .venv/bin/activate```
 3. *Hanya untuk pertama kali:* Install semua mesin AI-nya dengan mengetik:
 ```pip install -e ".[api]"```
