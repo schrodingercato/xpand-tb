@@ -36,11 +36,14 @@ Karena modul AI ini butuh Python versi spesifik (3.8) dan sering bentrok jika me
 ```python -m uvicorn api.app:app --port 8000```
 7. Biarkan terminal ini tetap terbuka dan menyala.
 
-*Langkah 3: Nge-bridge pake Ngrok*
-1. Buka Terminal/CMD yang *BARU*.
-2. Buat jembatan dengan mengetik: 
-```ngrok http 8000```
-3. Copy link Ngrok yang depannya https (misal: https://abcd.ngrok.app) dan kasih ke juri/tester lewat WA atau Zoom.
+*Langkah 3: Menyambungkan dengan Internet (Tanpa Ngrok / Tanpa Install)*
+Daripada repot menginstal aplikasi Ngrok, kita bisa menggunakan fitur bawaan Windows bernama SSH untuk membuat *bridge* secara instan.
+1. Buka Terminal/PowerShell yang *BARU*.
+2. Buat jembatan publik dengan mengetik perintah ini lalu Enter: 
+```ssh -p 443 -R0:localhost:8000 a.pinggy.io```
+*(Jika muncul pertanyaan "Are you sure you want to continue connecting?", ketik `yes` lalu Enter).*
+3. Di layar terminal akan muncul sebuah kotak teks besar. Cari dan salin *(copy)* link URL-nya (biasanya berawalan `https://....a.pinggy.link`).
+4. Link ini akan otomatis mati jika terminal Anda ditutup, jadi biarkan terminal ini tetap terbuka.
 
 ---
 
@@ -48,7 +51,7 @@ B. *Buat Juri/Tester*
 
 1. Buka web https://xpand-tb.vercel.app
 2. Di halaman Login cek pojok kanan bawah, klik ikon gerigi ⚙️
-3. Paste link Ngrok dari admin tadi trus klik OK
+3. Paste link Pinggy/Ngrok dari admin tadi trus klik OK
 4. Login pake akun dokter:
 • NIP: ```197001011990031001```
 • Sandi: ```demo1234```
