@@ -40,7 +40,7 @@ Karena modul AI ini butuh Python versi spesifik (3.8) dan sering bentrok jika me
 Daripada repot menginstal aplikasi Ngrok, kita bisa menggunakan fitur bawaan Windows bernama SSH untuk membuat *bridge* secara instan.
 1. Buka Terminal/PowerShell yang *BARU*.
 2. Buat jembatan publik dengan mengetik perintah ini lalu Enter: 
-```ssh -p 443 -R0:localhost:8000 a.pinggy.io```
+```ssh -p 443 -R0:127.0.0.1:8000 a.pinggy.io```
 *(Jika muncul pertanyaan "Are you sure you want to continue connecting?", ketik `yes` lalu Enter).*
 3. Di layar terminal akan muncul sebuah kotak teks besar. Cari dan salin *(copy)* link URL-nya (biasanya berawalan `https://....a.pinggy.link`).
 4. Link ini akan otomatis mati jika terminal Anda ditutup, jadi biarkan terminal ini tetap terbuka.
