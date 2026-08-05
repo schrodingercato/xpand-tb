@@ -19,11 +19,16 @@ Lalu cari folder `Gemastik2026` yang baru terdownload tersebut.
 5. Ketik perintah ini lalu Enter untuk memastikan sistem ter-update:
 ```git pull origin main```
 
-*Langkah 2: Menyalakan Server Lokal*
-1. Nyalakan virtual environment dengan mengetik ini di terminal tadi:
+*Langkah 2: Menyiapkan dan Menyalakan Server Lokal*
+1. *Hanya untuk pertama kali:* Buat virtual environment dengan mengetik:
+```python -m venv .venv```
+2. Nyalakan virtual environment tersebut dengan mengetik:
 • Windows: ```.\.venv\Scripts\activate```
 • Mac/Linux: ```source .venv/bin/activate```
-2. Nyalakan server lokalnya dengan mengetik:
+3. *Hanya untuk pertama kali:* Install semua mesin AI-nya dengan mengetik:
+```pip install -e ".[api]"```
+(Tunggu sampai proses download selesai, ini mungkin memakan waktu agak lama karena file AI sangat besar).
+4. Setelah semuanya selesai, nyalakan server lokalnya dengan mengetik:
 ```python -m uvicorn api.app:app --port 8000```
 3. Biarkan terminal ini tetap terbuka dan menyala.
 
