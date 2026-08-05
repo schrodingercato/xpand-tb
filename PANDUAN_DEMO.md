@@ -1,62 +1,46 @@
-# Panduan Demo Xpand-TB (Arsitektur Hybrid) 🚀
+*Panduan Demo Xpand-TB (Arsitektur Hybrid)* 🚀
 
-## Kenapa harus hybrid?
-Backend AI Xpand-TB (buatan Ilena) itu **berat banget** buat memproses citra 3D Rontgen pakai pustaka AI bernama *PyTorch*. 
-- Kalau di-deploy ke cloud gratisan (seperti Render/Heroku), servernya pasti langsung *crash* atau *Out Of Memory* (OOM).
-- Kalau sewa server cloud yang punya GPU sungguhan, harganya sangat mahal (ratusan ribu hingga jutaan per bulan).
+*Kenapa harus hybrid?*
+Backend AI Xpand-TB (buatan Ilena) itu _berat banget_ buat proses 3D pake PyTorch. Kalo di-deploy ke cloud gratisan pasti langsung crash/OOM dan kalo sewa server GPU harganya mahal.
+Solusinya:
+• Frontend tetep di Vercel (https://xpand-tb.vercel.app)
+• Backend jalan di laptop kita sendiri yg speknya kuat
+• Keduanya disambungin pake Ngrok
 
-**Solusi Cerdas:**
-- **Frontend (Tampilan Web):** Tetap di-deploy di Vercel secara gratis (`https://xpand-tb.vercel.app`).
-- **Backend (Otak AI):** Dijalankan secara tersembunyi di **laptop kita sendiri** yang spesifikasinya kuat.
-- Keduanya akan disambungkan secara gaib menggunakan jembatan internet bernama **Ngrok**.
+A. *Buat Admin (Yang pegang server)*
 
----
+*Langkah 1: Download Code (Clone Repo)*
+1. Buka Terminal atau Command Prompt di laptop Anda.
+2. Download sistem milik Ilena dengan mengetik perintah ini lalu Enter:
+```git clone https://github.com/ilena031/Gemastik2026.git```
+3. Buka aplikasi *File Explorer* (Windows) atau Finder (Mac).
+4. Cari dan buka folder `Gemastik2026` yang baru saja di-download tadi.
+5. Klik pada *Address Bar* (kolom alamat folder di bagian atas), ketik ```cmd``` lalu tekan Enter. Layar hitam Terminal akan otomatis terbuka di dalam folder tersebut.
 
-## 👩‍💻 A. Buat Admin (Yang Pegang Server ML)
-*Bagian ini HANYA dilakukan oleh orang yang memegang laptop berisi kode AI Ilena.*
+*Langkah 2: Menyalakan Server Lokal*
+1. Nyalakan virtual environment dengan mengetik ini di terminal tadi:
+• Windows: ```.venv\Scripts\activate```
+• Mac/Linux: ```source .venv/bin/activate```
+2. Nyalakan server lokalnya dengan mengetik:
+```python -m uvicorn api.app:app --port 8000```
+3. Biarkan terminal ini tetap terbuka dan menyala.
 
-### Langkah 1: Membuka Folder Repositori
-1. Buka aplikasi **File Explorer** (Windows) atau Finder (Mac).
-2. Cari dan buka folder repositori `Gemastik2026` milik Ilena.
-3. Klik pada **Address Bar** (bilah alamat folder di bagian atas), lalu ketik `cmd` dan tekan **Enter**.
-4. Layar hitam Terminal (Command Prompt) akan terbuka persis di dalam folder tersebut.
-
-### Langkah 2: Menyalakan Server Lokal
-1. Di Terminal yang baru terbuka, kita harus menyalakan "lingkungan buatan" (Virtual Environment) Python terlebih dahulu. Ketik perintah ini dan tekan Enter:
-   - Jika pakai Windows: `.venv\Scripts\activate`
-   - Jika pakai Mac/Linux: `source .venv/bin/activate`
-2. Setelah aktif (biasanya ada tulisan `(.venv)` di pinggir terminal), nyalakan server dengan mengetik:
-   ```bash
-   python -m uvicorn api.app:app --port 8000
-   ```
-3. Tunggu sampai muncul tulisan `Application startup complete`. Jangan tutup layar hitam ini! Server AI Anda sekarang sudah menyala secara lokal.
-
-### Langkah 3: Menyalakan Jembatan Ngrok
-Server Anda sudah menyala, tapi juri di internet belum bisa mengaksesnya. Kita harus membuatkan jembatannya.
-1. Pastikan Anda sudah mengunduh file aplikasi **Ngrok** dari situs web resminya (`ngrok.com`) dan sudah pernah mendaftar akun gratis di sana (untuk mendapatkan kode *Auth Token* jika diminta).
-2. Buka Terminal/CMD **BARU** (biarkan terminal pertama tetap jalan).
-3. Ketikkan perintah ini dan tekan Enter:
-   ```bash
-   ngrok http 8000
-   ```
-4. Ngrok akan memunculkan layar hitam baru dengan beberapa baris teks. Cari tulisan yang berbunyi **Forwarding**.
-5. Di sebelah kanan tulisan Forwarding, Anda akan melihat tautan unik (contoh: `https://abcd-123.ngrok.app`). 
-6. **Blok (Copy) tautan Ngrok yang berawalan HTTPS tersebut**, lalu berikan/kirimkan ke Juri (Tester) melalui WhatsApp atau Zoom Chat.
+*Langkah 3: Nge-bridge pake Ngrok*
+1. Buka Terminal/CMD yang *BARU*.
+2. Buat jembatan dengan mengetik: 
+```ngrok http 8000```
+3. Copy link Ngrok yang depannya https (misal: https://abcd.ngrok.app) dan kasih ke juri/tester lewat WA atau Zoom.
 
 ---
 
-## 🧑‍⚕️ B. Buat Juri / Tester (Pengguna)
-*Bagian ini dilakukan oleh juri atau siapa pun yang ingin mencoba aplikasi.*
+B. *Buat Juri/Tester*
 
-1. Buka web resmi Xpand-TB dari browser (Chrome/Edge): **`https://xpand-tb.vercel.app`**
-2. Di halaman **Login**, coba perhatikan pojok kanan bawah layar. Anda akan melihat ikon **gerigi rahasia (⚙️)**. 
-3. Klik ikon gerigi ⚙️ tersebut.
-4. Sebuah kotak akan muncul. **Paste (Tempelkan) tautan Ngrok** yang Anda dapatkan dari Admin tadi (contoh: `https://abcd-123.ngrok.app`), lalu klik **OK**.
-5. Halaman web akan memuat ulang (refresh) secara otomatis.
-6. Sekarang, silakan login memakai akun dokter:
-   - **NIP:** `197001011990031001`
-   - **Sandi:** `demo1234`
-7. Selesai! Anda sudah bisa langsung mencoba fitur **Upload Foto Rontgen (CXR)**.
+1. Buka web https://xpand-tb.vercel.app
+2. Di halaman Login cek pojok kanan bawah, klik ikon gerigi ⚙️
+3. Paste link Ngrok dari admin tadi trus klik OK
+4. Login pake akun dokter:
+• NIP: ```197001011990031001```
+• Sandi: ```demo1234```
+5. Udah bisa langsung coba upload foto rontgen (CXR) 🎉
 
-> ⚠️ **Catatan Penting (Mode Mock):** 
-> Kalau ikon gerigi (⚙️) tadi dikosongkan (tanpa diisi link Ngrok), web Vercel ini akan otomatis masuk ke **Mode Mock**. Mode Mock ini HANYA bisa digunakan untuk melihat-lihat desain UI dan fitur Dasbor saja. Namun, jika Anda mencoba memencet tombol Upload Rontgen, proses AInya tidak akan berfungsi karena tidak tersambung ke server milik Admin.
+_Note: Kalo ikon geriginya dikosongin webnya bakal otomatis masuk ke Mode Mock. Cuma bisa liat-liat UI aja tapi fitur upload AI ga bisa dipake karena ga nyambung ke server._
