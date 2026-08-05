@@ -49,13 +49,15 @@ Daripada repot menginstal aplikasi Ngrok, kita bisa menggunakan fitur bawaan Win
 
 B. *Buat Juri/Tester*
 
-1. Buka web https://xpand-tb.vercel.app
-2. Scroll ke paling bawah halaman utama (atau di halaman Login), cari dan klik **ikon gerigi ⚙️** di pojok kanan bawah.
-3. Paste link Pinggy/Ngrok secara utuh (wajib ada `https://` di depannya) lalu klik OK.
-4. Jika URL berhasil tersimpan, ikon gerigi ⚙️ akan berubah menjadi **menyala terang**.
-5. Login pake akun dokter:
+Jika Admin sudah menyalakan mesin AI lokal, Juri bisa langsung menguji AI sungguhan dengan cara:
+
+1. Buka link Pinggy/Ngrok yang diberikan Admin (misal: `https://oknwy...pinggy.link`).
+   *(Jika ada halaman peringatan Pinggy "You are about to visit...", klik tombol "Visit Site").*
+2. Anda akan melihat Web Xpand-TB terbuka! Scroll ke paling bawah, klik **ikon gerigi ⚙️**.
+3. *Paste* kembali link Pinggy yang sama persis (wajib pakai `https://`) lalu klik OK.
+4. Jika ikon gerigi menyala terang, Login pake akun dokter:
 • NIP: ```197001011990031001```
 • Sandi: ```demo1234```
-6. Udah bisa langsung coba upload foto rontgen (CXR) 🎉
+5. Udah bisa langsung coba upload foto rontgen (CXR) dan melihat AI berproses secara *real-time*! 🎉
 
-_Note: Kalo ikon geriginya dikosongin webnya bakal otomatis masuk ke Mode Mock. Cuma bisa liat-liat UI aja tapi fitur upload AI ga bisa dipake karena ga nyambung ke server._
+_Note: Jika ingin melihat-lihat tampilan UI secara cepat tanpa butuh server AI (Mode Mock), Anda bisa kapan saja mengunjungi **https://xpand-tb.vercel.app** dan mengosongkan ikon geriginya._
