@@ -1,58 +1,62 @@
-# Panduan Arsitektur Hybrid (Demo Xpand-TB)
+# Panduan Demo Xpand-TB (Arsitektur Hybrid) 🚀
 
-Panduan ini ditujukan bagi anggota tim yang ingin mendemonstrasikan fitur **Artificial Intelligence (AI) / Machine Learning** dari Xpand-TB secara nyata (memproses foto rontgen menjadi 3D) dengan tetap menggunakan web Vercel publik (`https://xpand-tb.vercel.app`).
+## Kenapa harus hybrid?
+Backend AI Xpand-TB (buatan Ilena) itu **berat banget** buat memproses citra 3D Rontgen pakai pustaka AI bernama *PyTorch*. 
+- Kalau di-deploy ke cloud gratisan (seperti Render/Heroku), servernya pasti langsung *crash* atau *Out Of Memory* (OOM).
+- Kalau sewa server cloud yang punya GPU sungguhan, harganya sangat mahal (ratusan ribu hingga jutaan per bulan).
 
-## ❓ Mengapa Arsitektur Ini Diperlukan?
-Mungkin Anda bertanya-tanya: *"Kenapa backend-nya tidak di-deploy sekalian ke Vercel atau Render?"*
-
-Jawabannya adalah karena **Backend AI Xpand-TB (buatan Ilena) sangatlah berat**. Proses segmentasi dan rekonstruksi 3D menggunakan pustaka **PyTorch** membutuhkan **Kartu Grafis (GPU)** dan RAM yang sangat besar. Layanan cloud gratis di internet tidak mampu menjalankannya (akan langsung *crash* / *Out of Memory*). Untuk menyewa cloud dengan GPU, biayanya bisa mencapai ratusan ribu hingga jutaan rupiah per bulan.
-
-**Solusi Arsitektur Hybrid:**
-Kita memisahkan beban kerjanya! 
-1. **Frontend (Antarmuka Web)** dititipkan di Vercel secara gratis.
-2. **Backend (Otak AI)** dijalankan di **laptop Anda sendiri** yang memiliki spesifikasi tinggi.
-3. Web Vercel akan dihubungkan secara gaib ke laptop Anda menggunakan teknologi yang disebut **Ngrok**.
+**Solusi Cerdas:**
+- **Frontend (Tampilan Web):** Tetap di-deploy di Vercel secara gratis (`https://xpand-tb.vercel.app`).
+- **Backend (Otak AI):** Dijalankan secara tersembunyi di **laptop kita sendiri** yang spesifikasinya kuat.
+- Keduanya akan disambungkan secara gaib menggunakan jembatan internet bernama **Ngrok**.
 
 ---
 
-## 👩‍💻 A. Panduan Untuk Admin (Orang yang Menyalakan Server AI)
-*Orang ini harus memiliki laptop berspesifikasi mumpuni (memiliki GPU/CUDA jika memungkinkan) dan bertugas "menghidupkan" otak AI.*
+## 👩‍💻 A. Buat Admin (Yang Pegang Server ML)
+*Bagian ini HANYA dilakukan oleh orang yang memegang laptop berisi kode AI Ilena.*
 
-### Langkah 1: Jalankan Backend Ilena
-1. Buka folder repositori **Gemastik2026** (milik Ilena) di terminal Anda.
-2. Aktifkan *virtual environment* Python Anda.
-3. Jalankan perintah ini untuk menyalakan server lokal:
+### Langkah 1: Membuka Folder Repositori
+1. Buka aplikasi **File Explorer** (Windows) atau Finder (Mac).
+2. Cari dan buka folder repositori `Gemastik2026` milik Ilena.
+3. Klik pada **Address Bar** (bilah alamat folder di bagian atas), lalu ketik `cmd` dan tekan **Enter**.
+4. Layar hitam Terminal (Command Prompt) akan terbuka persis di dalam folder tersebut.
+
+### Langkah 2: Menyalakan Server Lokal
+1. Di Terminal yang baru terbuka, kita harus menyalakan "lingkungan buatan" (Virtual Environment) Python terlebih dahulu. Ketik perintah ini dan tekan Enter:
+   - Jika pakai Windows: `.venv\Scripts\activate`
+   - Jika pakai Mac/Linux: `source .venv/bin/activate`
+2. Setelah aktif (biasanya ada tulisan `(.venv)` di pinggir terminal), nyalakan server dengan mengetik:
    ```bash
    python -m uvicorn api.app:app --port 8000
    ```
-   *Biarkan terminal ini terbuka dan menyala.*
+3. Tunggu sampai muncul tulisan `Application startup complete`. Jangan tutup layar hitam ini! Server AI Anda sekarang sudah menyala secara lokal.
 
-### Langkah 2: Hubungkan Laptop ke Internet Publik (Ngrok)
-Karena web Vercel berada di internet publik (HTTPS), web tersebut tidak bisa asal masuk ke laptop Anda. Kita butuh jembatan.
-1. Download dan instal **Ngrok** dari [ngrok.com](https://ngrok.com).
-2. Buka terminal *baru*, lalu ketikkan perintah:
+### Langkah 3: Menyalakan Jembatan Ngrok
+Server Anda sudah menyala, tapi juri di internet belum bisa mengaksesnya. Kita harus membuatkan jembatannya.
+1. Pastikan Anda sudah mengunduh file aplikasi **Ngrok** dari situs web resminya (`ngrok.com`) dan sudah pernah mendaftar akun gratis di sana (untuk mendapatkan kode *Auth Token* jika diminta).
+2. Buka Terminal/CMD **BARU** (biarkan terminal pertama tetap jalan).
+3. Ketikkan perintah ini dan tekan Enter:
    ```bash
    ngrok http 8000
    ```
-3. Ngrok akan memunculkan layar hitam berisi tautan **Forwarding**. Salin tautan yang berawalan `https://` (contoh: `https://abcd-123.ngrok.app`).
-4. **Kirim tautan Ngrok tersebut kepada teman/juri yang akan mencoba Vercel.**
+4. Ngrok akan memunculkan layar hitam baru dengan beberapa baris teks. Cari tulisan yang berbunyi **Forwarding**.
+5. Di sebelah kanan tulisan Forwarding, Anda akan melihat tautan unik (contoh: `https://abcd-123.ngrok.app`). 
+6. **Blok (Copy) tautan Ngrok yang berawalan HTTPS tersebut**, lalu berikan/kirimkan ke Juri (Tester) melalui WhatsApp atau Zoom Chat.
 
 ---
 
-## 🧑‍⚕️ B. Panduan Untuk Pengguna (Juri / Penguji Demo)
-*Ini adalah langkah yang dilakukan oleh orang yang membuka web Vercel Anda dari komputer mereka.*
+## 🧑‍⚕️ B. Buat Juri / Tester (Pengguna)
+*Bagian ini dilakukan oleh juri atau siapa pun yang ingin mencoba aplikasi.*
 
-1. Buka situs web resmi Xpand-TB: **https://xpand-tb.vercel.app**
-2. Di halaman **Login**, perhatikan bagian paling bawah (di sudut kanan bawah layar). Anda akan melihat **ikon gerigi (⚙️)** kecil. Klik ikon tersebut.
-3. Akan muncul kotak dialog. **Paste / Tempelkan tautan Ngrok** yang diberikan oleh Admin tadi (contoh: `https://abcd-123.ngrok.app`).
-4. Klik **OK**. Halaman akan dimuat ulang.
-5. Silakan masuk menggunakan akun Dokter:
+1. Buka web resmi Xpand-TB dari browser (Chrome/Edge): **`https://xpand-tb.vercel.app`**
+2. Di halaman **Login**, coba perhatikan pojok kanan bawah layar. Anda akan melihat ikon **gerigi rahasia (⚙️)**. 
+3. Klik ikon gerigi ⚙️ tersebut.
+4. Sebuah kotak akan muncul. **Paste (Tempelkan) tautan Ngrok** yang Anda dapatkan dari Admin tadi (contoh: `https://abcd-123.ngrok.app`), lalu klik **OK**.
+5. Halaman web akan memuat ulang (refresh) secara otomatis.
+6. Sekarang, silakan login memakai akun dokter:
    - **NIP:** `197001011990031001`
    - **Sandi:** `demo1234`
-6. Cobalah mengunggah foto Rontgen (CXR).
-   
-**Apa yang terjadi?**
-Foto rontgen yang Anda unggah dari peramban (browser) Anda akan dikirim melesat melalui internet menuju **laptop Admin (di rumahnya)**. Laptop Admin akan memproses foto tersebut menjadi 3D, lalu mengirimkan hasilnya kembali ke peramban Anda! Semua terlihat sangat ajaib dan profesional.
+7. Selesai! Anda sudah bisa langsung mencoba fitur **Upload Foto Rontgen (CXR)**.
 
-> **Catatan Mode Demo (Tanpa Admin):**
-> Jika Anda tidak mengisi tautan Ngrok di tombol (⚙️) tadi (membiarkannya kosong), web Vercel akan otomatis berjalan dalam **Mode Mock**. Mode Mock memungkinkan Anda masuk ke Dasbor untuk sekadar melihat-lihat desain UI, namun fitur unggah AI tidak akan berfungsi karena tidak ada server yang menyala.
+> ⚠️ **Catatan Penting (Mode Mock):** 
+> Kalau ikon gerigi (⚙️) tadi dikosongkan (tanpa diisi link Ngrok), web Vercel ini akan otomatis masuk ke **Mode Mock**. Mode Mock ini HANYA bisa digunakan untuk melihat-lihat desain UI dan fitur Dasbor saja. Namun, jika Anda mencoba memencet tombol Upload Rontgen, proses AInya tidak akan berfungsi karena tidak tersambung ke server milik Admin.
