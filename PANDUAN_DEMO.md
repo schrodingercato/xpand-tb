@@ -15,7 +15,7 @@ A. *Buat Admin (Yang pegang server)*
 ```git clone https://github.com/ilena031/Gemastik2026.git```
 Lalu cari folder `Gemastik2026` yang baru terdownload tersebut.
 3. *Jika foldernya sudah ada:* Langsung saja buka folder `Gemastik2026` tersebut di File Explorer.
-4. Klik pada *Address Bar* (kolom alamat folder di bagian paling atas), ketik ```cmd``` lalu tekan Enter. Layar hitam Terminal akan otomatis terbuka.
+4. Buka Terminal di folder tersebut. Cara paling gampang: *Klik kanan di area kosong* di dalam folder itu, lalu pilih *Open in Terminal*. (Atau buka aplikasi Terminal biasa, ketik ```cd``` spasi, lalu *paste* alamat foldernya dan Enter).
 5. Ketik perintah ini lalu Enter untuk memastikan sistem ter-update:
 ```git pull origin main```
 
