@@ -21,7 +21,7 @@ Lalu cari folder `Gemastik2026` yang baru terdownload tersebut.
 
 *Langkah 2: Menyalakan Server Lokal*
 1. Nyalakan virtual environment dengan mengetik ini di terminal tadi:
-• Windows: ```.venv\Scripts\activate```
+• Windows: ```.\.venv\Scripts\activate```
 • Mac/Linux: ```source .venv/bin/activate```
 2. Nyalakan server lokalnya dengan mengetik:
 ```python -m uvicorn api.app:app --port 8000```
