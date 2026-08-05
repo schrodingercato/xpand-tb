@@ -9,13 +9,15 @@ Solusinya:
 
 A. *Buat Admin (Yang pegang server)*
 
-*Langkah 1: Download Code (Clone Repo)*
-1. Buka Terminal atau Command Prompt di laptop Anda.
-2. Download sistem milik Ilena dengan mengetik perintah ini lalu Enter:
+*Langkah 1: Download & Update Code*
+1. Buka aplikasi *File Explorer* (Windows) atau Finder (Mac).
+2. *Jika Anda belum punya file-nya:* Buka Terminal, lalu ketik perintah ini buat men-download:
 ```git clone https://github.com/ilena031/Gemastik2026.git```
-3. Buka aplikasi *File Explorer* (Windows) atau Finder (Mac).
-4. Cari dan buka folder `Gemastik2026` yang baru saja di-download tadi.
-5. Klik pada *Address Bar* (kolom alamat folder di bagian atas), ketik ```cmd``` lalu tekan Enter. Layar hitam Terminal akan otomatis terbuka di dalam folder tersebut.
+Lalu cari folder `Gemastik2026` yang baru terdownload tersebut.
+3. *Jika foldernya sudah ada:* Langsung saja buka folder `Gemastik2026` tersebut di File Explorer.
+4. Klik pada *Address Bar* (kolom alamat folder di bagian paling atas), ketik ```cmd``` lalu tekan Enter. Layar hitam Terminal akan otomatis terbuka.
+5. Ketik perintah ini lalu Enter untuk memastikan sistem ter-update:
+```git pull origin main```
 
 *Langkah 2: Menyalakan Server Lokal*
 1. Nyalakan virtual environment dengan mengetik ini di terminal tadi:
