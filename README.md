@@ -23,3 +23,11 @@ Repositori ini difork/disalin dari proyek utama backend ML (Tim Deenpeleb, Gemas
    ```
 
 Aplikasi akan berjalan di `http://localhost:5173/` (atau port lain yang tersedia).
+
+## 🚀 Panduan Demo Lomba (Arsitektur Hybrid)
+
+Untuk keperluan presentasi/rekaman video yang mengharuskan penggunaan domain Vercel publik (`https://xpand-tb.vercel.app`) dengan proses Artificial Intelligence (AI) yang sungguhan, sistem ini dilengkapi dengan **Pemilih Server Dinamis**.
+
+Tata cara lengkap (langkah per langkah) untuk menyambungkan Vercel Anda dengan Mesin AI (GPU) di laptop Anda telah dijelaskan secara rinci. 
+
+👉 **[BACA PANDUAN_DEMO.md DI SINI](PANDUAN_DEMO.md)** 👈
