@@ -21,7 +21,8 @@ Lalu cari folder `Gemastik2026` yang baru terdownload tersebut.
 
 *Langkah 2: Menyiapkan dan Menyalakan Server Lokal*
 1. *Hanya untuk pertama kali:* Buat virtual environment dengan mengetik:
-```python -m venv .venv```
+• Windows: ```py -m venv .venv``` (Atau ```python -m venv .venv``` jika `py` tidak dikenali).
+• Mac/Linux: ```python3 -m venv .venv```
 2. Nyalakan virtual environment tersebut dengan mengetik:
 • Windows: ```.\.venv\Scripts\activate``` (Atau ```.\.venv\bin\activate``` jika folder Scripts tidak ditemukan).
 • Mac/Linux: ```source .venv/bin/activate```
