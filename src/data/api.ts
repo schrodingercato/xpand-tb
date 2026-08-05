@@ -256,28 +256,38 @@ const kirimJson = <T,>(url: string, badan: unknown) =>
     body: JSON.stringify(badan),
   })
 
-export const daftarKlinisi = (pengenal: string, nama: string, sandi: string, subjudul: string) =>
-  kirimJson<Pengguna>('/api/auth/daftar', { pengenal, nama, sandi, subjudul })
+export const daftarKlinisi = async (pengenal: string, nama: string, sandi: string, subjudul: string): Promise<Pengguna> => {
+  // --- MOCK DAFTAR ---
+  const inisial = nama.substring(0, 2).toUpperCase()
+  const baru: Pengguna = {
+    id: Math.floor(Math.random() * 1000), peran: 'klinisi', nama,
+    pengenal: pengenal.substring(0, 6) + '••••••••' + pengenal.slice(-4), subjudul, inisial, aktif: true,
+  }
+  localStorage.setItem('xpandtb_mock_session', JSON.stringify(baru))
+  return baru
+}
 
 const KUNCI_MOCK = 'xpandtb_mock_session'
 
 export const masukAkun = async (pengenal: string, sandi: string): Promise<Pengguna> => {
   // --- MOCK LOGIN ---
-  // Mencegat login agar tidak perlu backend sungguhan.
   if (pengenal === '197001011990031001' && sandi === 'demo1234') {
     const sesiKlinisi: Pengguna = {
-      id: 1,
-      peran: 'klinisi',
-      nama: 'Dr. Demo Xpand-TB',
-      pengenal: '197001••••••••1001',
-      subjudul: 'Klinik Utama',
-      inisial: 'DD',
-      aktif: true,
+      id: 1, peran: 'klinisi', nama: 'Dr. Demo Xpand-TB',
+      pengenal: '197001••••••••1001', subjudul: 'Klinik Utama', inisial: 'DD', aktif: true,
     }
     localStorage.setItem(KUNCI_MOCK, JSON.stringify(sesiKlinisi))
     return sesiKlinisi
   }
-  throw new GalatApi('NIP atau kata sandi salah. Gunakan NIP: 197001011990031001, Sandi: demo1234', 401)
+  if (pengenal === '3519012345670001' && sandi === 'demo1234') {
+    const sesiPasien: Pengguna = {
+      id: 2, peran: 'pasien', nama: 'Bapak Pasien Demo',
+      pengenal: '351901••••••0001', subjudul: 'Pasien Xpand-TB', inisial: 'BP', aktif: true,
+    }
+    localStorage.setItem(KUNCI_MOCK, JSON.stringify(sesiPasien))
+    return sesiPasien
+  }
+  throw new GalatApi('NIP/NIK atau sandi salah. Gunakan NIP: 197001011990031001 atau NIK: 3519012345670001 dengan sandi demo1234', 401)
 }
 
 export const keluarAkun = async () => {
