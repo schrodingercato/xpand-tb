@@ -220,8 +220,15 @@ export default function Login() {
               saatIni
             )
             if (input !== null) {
-              if (input.trim()) {
-                localStorage.setItem('XPANDTB_HYBRID_API', input.trim())
+              let finalUrl = input.trim()
+              if (finalUrl) {
+                // Hapus trailing slash jika ada
+                if (finalUrl.endsWith('/')) finalUrl = finalUrl.slice(0, -1)
+                // Tambahkan https:// otomatis jika terlupa
+                if (!finalUrl.startsWith('http://') && !finalUrl.startsWith('https://')) {
+                  finalUrl = 'https://' + finalUrl
+                }
+                localStorage.setItem('XPANDTB_HYBRID_API', finalUrl)
               } else {
                 localStorage.removeItem('XPANDTB_HYBRID_API')
               }
