@@ -160,20 +160,25 @@ export class GalatApi extends Error {
 }
 
 async function minta<T>(url: string, init?: RequestInit): Promise<T> {
-  // --- MOCK INTERCEPTOR ---
-  if (url === '/api/status') {
-    return { modelDimuat: false, checkpoint: 'Vercel Demo Mode', antre: 0, fov: 'resize', idleUnloadDetik: 900, cuda: false } as unknown as T
-  }
-  if (url === '/api/kasus' && init?.method !== 'POST') {
-    return [] as unknown as T // Daftar kasus kosong
-  }
-  if (url === '/api/kasus' && init?.method === 'POST') {
-    throw new GalatApi('Fitur unggah dinonaktifkan pada versi Demo (tanpa backend).', 403)
+  const modeHybrid = localStorage.getItem('XPANDTB_HYBRID_API')
+  const targetUrl = modeHybrid ? modeHybrid + url : url
+
+  if (!modeHybrid) {
+    // --- MOCK INTERCEPTOR ---
+    if (url === '/api/status') {
+      return { modelDimuat: false, checkpoint: 'Vercel Demo Mode', antre: 0, fov: 'resize', idleUnloadDetik: 900, cuda: false } as unknown as T
+    }
+    if (url === '/api/kasus' && init?.method !== 'POST') {
+      return [] as unknown as T // Daftar kasus kosong
+    }
+    if (url === '/api/kasus' && init?.method === 'POST') {
+      throw new GalatApi('Fitur unggah dinonaktifkan pada versi Demo (tanpa backend).', 403)
+    }
   }
   
   let r: Response
   try {
-    r = await fetch(url, init)
+    r = await fetch(targetUrl, init)
   } catch (e) {
     // Layanan mati adalah kondisi normal di sini (dinyalakan manual, dan model dilepas saat
     // menganggur), jadi ia harus jadi pesan yang bisa ditindaklanjuti — bukan "Failed to fetch".
@@ -257,6 +262,9 @@ const kirimJson = <T,>(url: string, badan: unknown) =>
   })
 
 export const daftarKlinisi = async (pengenal: string, nama: string, _sandi: string, subjudul: string): Promise<Pengguna> => {
+  if (localStorage.getItem('XPANDTB_HYBRID_API')) {
+    return kirimJson<Pengguna>('/api/auth/daftar', { pengenal, nama, sandi: _sandi, subjudul })
+  }
   // --- MOCK DAFTAR ---
   const inisial = nama.substring(0, 2).toUpperCase()
   const baru: Pengguna = {
@@ -270,6 +278,9 @@ export const daftarKlinisi = async (pengenal: string, nama: string, _sandi: stri
 const KUNCI_MOCK = 'xpandtb_mock_session'
 
 export const masukAkun = async (pengenal: string, sandi: string): Promise<Pengguna> => {
+  if (localStorage.getItem('XPANDTB_HYBRID_API')) {
+    return kirimJson<Pengguna>('/api/auth/masuk', { pengenal, sandi })
+  }
   // --- MOCK LOGIN ---
   if (pengenal === '197001011990031001' && sandi === 'demo1234') {
     const sesiKlinisi: Pengguna = {
@@ -291,11 +302,17 @@ export const masukAkun = async (pengenal: string, sandi: string): Promise<Penggu
 }
 
 export const keluarAkun = async () => {
+  if (localStorage.getItem('XPANDTB_HYBRID_API')) {
+    return kirimJson<{ keluar: boolean }>('/api/auth/keluar', {})
+  }
   localStorage.removeItem(KUNCI_MOCK)
   return { keluar: true }
 }
 
 export const sesiSekarang = async (): Promise<Pengguna | null> => {
+  if (localStorage.getItem('XPANDTB_HYBRID_API')) {
+    return minta<Pengguna | null>('/api/auth/saya')
+  }
   const tersimpan = localStorage.getItem(KUNCI_MOCK)
   if (tersimpan) return JSON.parse(tersimpan)
   return null

@@ -209,8 +209,29 @@ export default function Login() {
         </div>
       </main>
 
-      <footer className="px-5 py-6 text-center text-[11px] text-teal-400">
+      <footer className="relative px-5 py-6 text-center text-[11px] text-teal-400">
         Copyright 2026 Tim Deenpeleb — Institut Teknologi Sepuluh Nopember.
+        <button
+          title="Pengaturan Mode Hybrid (Server ML Sungguhan)"
+          onClick={() => {
+            const saatIni = localStorage.getItem('XPANDTB_HYBRID_API') || ''
+            const input = prompt(
+              'Masukkan URL Backend ML Sungguhan (contoh: http://127.0.0.1:8000 atau Ngrok).\\n\\nKosongkan kotak ini untuk kembali ke mode Demo (Mock) tanpa server.',
+              saatIni
+            )
+            if (input !== null) {
+              if (input.trim()) {
+                localStorage.setItem('XPANDTB_HYBRID_API', input.trim())
+              } else {
+                localStorage.removeItem('XPANDTB_HYBRID_API')
+              }
+              window.location.reload()
+            }
+          }}
+          className="absolute right-5 top-1/2 -translate-y-1/2 p-2 text-base hover:text-teal-600 transition grayscale hover:grayscale-0 opacity-40 hover:opacity-100"
+        >
+          ⚙️
+        </button>
       </footer>
     </div>
   )
