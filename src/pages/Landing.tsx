@@ -299,7 +299,11 @@ export default function Landing() {
                 window.location.reload()
               }
             }}
-            className="p-2 text-base hover:text-teal-600 transition grayscale hover:grayscale-0 opacity-40 hover:opacity-100"
+            className={`p-2 text-base transition ${
+              localStorage.getItem('XPANDTB_HYBRID_API')
+                ? 'opacity-100 grayscale-0 scale-110 drop-shadow-md'
+                : 'opacity-40 grayscale hover:grayscale-0 hover:opacity-100'
+            }`}
           >
             ⚙️
           </button>

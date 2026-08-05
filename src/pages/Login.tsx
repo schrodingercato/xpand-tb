@@ -216,7 +216,7 @@ export default function Login() {
           onClick={() => {
             const saatIni = localStorage.getItem('XPANDTB_HYBRID_API') || ''
             const input = prompt(
-              'Masukkan URL Backend ML Sungguhan (contoh: http://127.0.0.1:8000 atau Ngrok).\\n\\nKosongkan kotak ini untuk kembali ke mode Demo (Mock) tanpa server.',
+              'Masukkan URL Backend ML Sungguhan (contoh: http://127.0.0.1:8000 atau Ngrok).\n\nKosongkan kotak ini untuk kembali ke mode Demo (Mock) tanpa server.',
               saatIni
             )
             if (input !== null) {
@@ -235,7 +235,11 @@ export default function Login() {
               window.location.reload()
             }
           }}
-          className="absolute right-5 top-1/2 -translate-y-1/2 p-2 text-base hover:text-teal-600 transition grayscale hover:grayscale-0 opacity-40 hover:opacity-100"
+          className={`absolute right-5 top-1/2 -translate-y-1/2 p-2 text-base transition ${
+            localStorage.getItem('XPANDTB_HYBRID_API')
+              ? 'opacity-100 grayscale-0 scale-110 drop-shadow-md'
+              : 'opacity-40 grayscale hover:grayscale-0 hover:opacity-100'
+          }`}
         >
           ⚙️
         </button>
