@@ -273,10 +273,36 @@ export default function Landing() {
             </p>
           </div>
         </div>
-        <div className="border-t border-teal-100 px-5 py-4">
-          <p className="mx-auto max-w-6xl text-[11px] text-teal-400">
+        <div className="relative mx-auto flex max-w-6xl items-center justify-between border-t border-teal-100 px-5 py-4">
+          <p className="text-[11px] text-teal-400">
             Copyright 2026 Tim Deenpeleb — All Rights Reserved.
           </p>
+          <button
+            title="Pengaturan Mode Hybrid (Server ML Sungguhan)"
+            onClick={() => {
+              const saatIni = localStorage.getItem('XPANDTB_HYBRID_API') || ''
+              const input = prompt(
+                'Masukkan URL Backend ML Sungguhan (contoh: http://127.0.0.1:8000 atau Ngrok).\n\nKosongkan kotak ini untuk kembali ke mode Demo (Mock) tanpa server.',
+                saatIni
+              )
+              if (input !== null) {
+                let finalUrl = input.trim()
+                if (finalUrl) {
+                  if (finalUrl.endsWith('/')) finalUrl = finalUrl.slice(0, -1)
+                  if (!finalUrl.startsWith('http://') && !finalUrl.startsWith('https://')) {
+                    finalUrl = 'https://' + finalUrl
+                  }
+                  localStorage.setItem('XPANDTB_HYBRID_API', finalUrl)
+                } else {
+                  localStorage.removeItem('XPANDTB_HYBRID_API')
+                }
+                window.location.reload()
+              }
+            }}
+            className="p-2 text-base hover:text-teal-600 transition grayscale hover:grayscale-0 opacity-40 hover:opacity-100"
+          >
+            ⚙️
+          </button>
         </div>
       </footer>
     </div>
